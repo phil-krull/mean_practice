@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='wrapper'>
+  <div class="notes">
+    <h1>
+      {{title}}!
+    </h1>
+    <div class="addNote">
+      <form (submit) = 'addNote()'>
+        <p>
+          Note: <input type="text" name='content' [(ngModel)]='note.content'>
+          <input type="submit" value="Add Note">
+        </p>
+      </form>
+    </div>
+
+    <div class="note" *ngFor="let note of notes">
+      <p>Noted on: {{ note.createdAt | date:'medium' }}</p>
+      <p>{{ note.content }}</p>
+    </div>
+  </div>
+
+</div>
